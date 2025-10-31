@@ -6,7 +6,7 @@ const Modal = ({ isOpen, onClose, cart, removeFromCart }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-300 bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-3 rounded-lg shadow-lg max-w-5xl w-full max-h-full overflow-y-scroll overflow-x-scroll">
+      <div className="bg-white p-3 rounded-lg shadow-lg max-w-5xl w-full max-h-full overflow-y-auto">
         {/* Modal header */}
         <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -35,7 +35,7 @@ const Modal = ({ isOpen, onClose, cart, removeFromCart }) => {
           </button>
         </div>
         {/* Modal body */}
-        <div className="overflow-y-scroll p-4 md:p-5 space-y-4 ">
+        <div className=" p-4 md:p-5 space-y-4 ">
           {cart.length <= 0 ? (
             <h1 className="text-2xl text-center font-semibold">
               No Product added in Cart
@@ -49,7 +49,6 @@ const Modal = ({ isOpen, onClose, cart, removeFromCart }) => {
               ))}
             </ul>
           )}
-          
         </div>
 
         {/* Modal footer */}
