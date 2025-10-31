@@ -1,16 +1,108 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## fstore — React + Vite
 
-Currently, two official plugins are available:
+(https://github.com/JayapriyaSiakumar/fstore)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A minimal React app scaffolded with Vite. This README explains how to run, build, and maintain the project and includes GitHub-ready workflows and contribution guidance.
 
-## React Compiler
+### Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Vite dev server with HMR
+- React Fast Refresh via official Vite React plugin
+- ESLint / Prettier integration (optional)
+- Ready for deployment to Vercel, Netlify, GitHub Pages, etc.
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 16+
+- npm or yarn
+- A GitHub repository (recommended) for collaboration and CI
+
+### Quick start
+
+1. Clone the repo
+   - git clone https://github.com/<your-org>/fstore.git
+   - cd fstore
+2. Install dependencies
+   - npm install
+   - or yarn
+3. Run development server
+   - npm run dev
+4. Build for production
+   - npm run build
+5. Preview production build locally
+   - npm run preview
+
+Replace JayapriyaSiakumar with your GitHub user or organization.
+
+### Typical scripts (adjust to package.json)
+
+- "dev" — start Vite dev server with HMR
+- "build" — build production files into dist/
+- "preview" — serve the production build locally
+- "lint" — run ESLint
+- "format" — run Prettier
+
+Example:
+
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  }
+}
+```
+
+### Environment
+
+- Use .env for local settings
+- Vite exposes client vars prefixed with VITE\_ (e.g., VITE_API_URL)
+- Restart dev server after changing .env
+
+### Folder structure
+
+- src/
+  - main.jsx — app entry
+  - App.jsx — root component
+  - components/ — reusable UI
+  - pages/ — route pages
+  - assets/ — images, styles
+- public/ — static assets
+- dist/ — production output
+
+### GitHub & CI
+
+- Create a repository and push the project
+- Recommended GitHub Actions:
+  - node CI for install / build / lint
+  - deployment workflow for Vercel/Netlify/GitHub Pages
+- Protect main branch and require PR reviews for merges
+
+### Deployment
+
+- Build: npm run build
+- Deploy dist/ to Vercel, Netlify, or GitHub Pages
+- For GitHub Pages, use an action or set gh-pages to publish dist/
+
+### Contributing
+
+- Fork -> feature branch -> open PR
+- Keep PRs small and descriptive
+- Run lint and format before opening PR
+- Add tests for new features when applicable
+
+### Troubleshooting & tips
+
+- If HMR or env changes don’t apply, restart dev server
+- For TypeScript, migrate to the React+TS template and enable type-aware ESLint
+
+### License
+
+Add a LICENSE file (e.g., MIT) at the project root.
+
+If you want, provide package.json and I will update the scripts and badges to match exactly.
